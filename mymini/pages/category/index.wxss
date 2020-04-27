@@ -1,0 +1,47 @@
+/* 设置page的高度 */
+page {
+  height: 100%;
+}
+.cates {
+  height: 100%;
+}
+.cates .cates_container {
+  /*通过计算得出容器的高度,在less中不支持calc运算，需要加上~''才能在css中计算*/
+  height: calc(100vh - 90rpx );
+  display: flex;
+}
+.cates .cates_container .left_title {
+  flex: 2;
+  text-align: center;
+}
+.cates .cates_container .left_title .nav {
+  height: 90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+.cates .cates_container .active {
+  color: var(--themeColor);
+  border-left: 5rpx solid currentColor;
+}
+.cates .cates_container .right_content {
+  flex: 5;
+  margin-top: 10rpx;
+}
+.cates .cates_container .right_content .goods .goods_title {
+  text-align: center;
+  background-color: #eee;
+}
+.cates .cates_container .right_content .goods .list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cates .cates_container .right_content .goods .list .nav {
+  text-align: center;
+  padding: 10rpx;
+  width: 33.33%;
+}
+.cates .cates_container .right_content .goods .list .nav .img {
+  width: 100%;
+}

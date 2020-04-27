@@ -1,0 +1,13 @@
+/* 给所有标签设置样式 */
+@import '/styles/iconfont/iconfont';
+page,view,text,swiper,swiper-item,image,navigator{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+page{
+  /* 定义一个主题颜色--开头 */
+  --themeColor:#eb4450;
+  /* 定义统一字体大小 */
+  font-size: 28rpx;
+}

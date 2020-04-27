@@ -1,0 +1,32 @@
+<view class="cates">
+  <!-- 引入搜索框组件 -->
+  <SearchInput></SearchInput>
+  <view class="cates_container">
+    <scroll-view class="left_title" scroll-y>
+      <view data-id="{{index}}" bindtap="getID" class="nav {{selectColor===index?'active':''}}" wx:for="{{leftList}}" wx:key="index">
+        {{item}}
+      </view>
+    </scroll-view>
+    <scroll-view class="right_content" scroll-top="{{scrollTop}}" scroll-y >
+      <view class="goods" wx:for="{{rightContent}}"
+      wx:for-item="content"
+      wx:for-index="index1"
+      wx:key="index1"
+      >
+        <view class="goods_title">{{content.cat_name}}</view>
+        <view class="list" 
+        >
+          <navigator class="nav"
+          wx:for="{{content.children}}"
+          wx:key="index"
+          url="/pages/goods_list/index?cid=5"
+          >
+            <image class="img" src="{{item.cat_icon}}" mode="widthFix">
+            </image>
+            <view class="goods_font">{{item.cat_name}}</view>
+          </navigator>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

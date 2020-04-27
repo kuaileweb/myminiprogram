@@ -1,0 +1,32 @@
+.tab .tab_nav {
+  display: flex;
+  border-bottom: 5rpx solid #ddd;
+}
+.tab .tab_nav .tab_title {
+  display: flex;
+  flex: 2;
+  justify-content: center;
+  align-items: center;
+}
+.tab .tab_nav .tab_title image {
+  width: 70%;
+}
+.tab .tab_nav .tab_content {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-right: 5rpx;
+}
+.tab .tab_nav .tab_content .tab_name {
+  display: -webkit-box;
+  /*文字超出隐藏*/
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  /*文字最多现实2行*/
+  -webkit-line-clamp: 2;
+}
+.tab .tab_nav .tab_content .tab_price {
+  color: var(--themeColor);
+  font-size: 32rpx;
+}

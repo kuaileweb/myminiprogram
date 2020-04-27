@@ -1,0 +1,94 @@
+.goods_detail {
+  padding-bottom: 90rpx;
+}
+.goods_detail .detail_swiper swiper {
+  height: 70vw;
+  text-align: center;
+}
+.goods_detail .detail_swiper swiper image {
+  width: 60%;
+}
+.goods_detail .detail_price {
+  font-size: 30rxp;
+  font-weight: 700;
+  color: var(--themeColor);
+  padding: 10px;
+}
+.goods_detail .goods_row {
+  display: flex;
+  border-bottom: 5rpx solid #ddd;
+  padding: 10px 0;
+  color: #666;
+}
+.goods_detail .goods_row .row_title {
+  flex: 5;
+  padding: 0 10px;
+  /*设置文字只显示两行后面为...*/
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.goods_detail .goods_row .shoucang {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-left: 1px solid #000;
+}
+.goods_detail .goods_row .shoucang .icon {
+  width: 30rpx;
+  margin-left: 40%;
+}
+.goods_detail .goods_row .shoucang .icon image {
+  width: 100%;
+}
+.goods_detail .goods_info .info_title {
+  color: var(--themeColor);
+  font-weight: 500;
+  font-size: 30rpx;
+  border-bottom: 5rpx solid #aaa;
+  padding: 10rpx;
+}
+.goods_detail .goods_info .info_content {
+  padding-top: 10rpx;
+}
+.goods_detail .goods_tool {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  display: flex;
+  border-top: 2rxp solid #aaa;
+}
+.goods_detail .goods_tool .tool_item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5rpx;
+  position: relative;
+}
+.goods_detail .goods_tool .tool_item button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.goods_detail .goods_tool .btn_cart {
+  flex: 2;
+  background-color: #ff0;
+  font-size: 30rxp;
+  font-weight: 700;
+}
+.goods_detail .goods_tool .btn_buy {
+  flex: 2;
+  background-color: var(--themeColor);
+  font-size: 30rxp;
+  font-weight: 700;
+}

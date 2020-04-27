@@ -1,0 +1,27 @@
+<view class="goods">
+  <SearchInput></SearchInput>
+  <Tabs tabs="{{tabs}}" bindpostIndex="getChildren">
+    <block wx:if="{{tabs[index].isActive}}">
+      <view class="tab">
+        <navigator class="tab_nav" wx:for="{{goodsList}}"
+        wx:key="index"
+        url="{{'/pages/goods_details/index?goods_id='+item.goods_id}}"
+        open-type="navigate"
+        >
+          <view class="tab_title">
+            <image class="" src="{{item.goods_small_logo?item.goods_small_logo:'http://image5.suning.cn/uimg/b2c/newcatentries/0000000000-000000000160455569_1_400x400.jpg'}}" mode="widthFix" lazy-load="true">
+            </image>
+          </view>
+          <view class="tab_content">
+            <view class="tab_name">
+              {{item.goods_name}}
+            </view>
+            <view class="tab_price">
+              ¥{{item.goods_price}}
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+  </Tabs>
+</view>

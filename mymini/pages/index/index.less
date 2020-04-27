@@ -1,0 +1,48 @@
+.swiper_index{
+  margin-top: 20rpx;
+  .swiper{
+    height: 340rpx;
+    .image{
+      width: 100%;
+    }
+  }
+}
+.cate_index{
+  display: flex;
+  .nav{
+    flex: 1;  
+    padding: 20rpx;
+    .image{
+      width: 100%;
+    }
+  }
+}
+.floor_index{
+  .floor_title{
+   
+    .img{
+      width: 100%;
+      margin: 10rpx 0;
+    }
+  }
+  .content{
+    overflow: hidden;
+    padding-bottom:10rpx;
+    .nav{
+      float: left;
+      width: 33.33%;
+      &:nth-last-child(-n+4){
+        /*后面四个超链接*/
+        height: 33.33vw * 386/232/2;
+        border-left: 10rpx solid #fff;
+      }
+      &:nth-child(2),&:nth-child(3){
+        border-bottom: 10rpx solid #fff;
+      }
+      .img{
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
