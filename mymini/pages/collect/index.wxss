@@ -1,1 +1,25 @@
-/* pages/collect/index.wxss */
+.orders_wrap {
+  color: #666;
+}
+.orders_wrap .orders_item {
+  border-bottom: 2rpx solid #aaa;
+}
+.orders_wrap .orders_item .orders_item_num {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+.orders_wrap .orders_item .orders_item_price {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+.orders_wrap .orders_item .orders_item_price .orders_price_value {
+  color: var(--themeColor);
+  font-size: 32rpx;
+}
+.orders_wrap .orders_item .orders_item_time {
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}

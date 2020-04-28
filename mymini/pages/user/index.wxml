@@ -1,2 +1,77 @@
-<!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<view class="user">
+  <view class="userInfo_row">
+    <view class="userInfo" wx:if="{{userInfo.nickName}}">
+      <image class="userInfo_bg_icon" src="{{userInfo.avatarUrl}}"></image>
+      <view class="userInfon_content">
+        <image class="userInfo_icon" src="{{userInfo.avatarUrl}}"></image>
+        <view class="userInfo_name">{{userInfo.nickName}}</view>
+      </view>
+    </view>
+    <button wx:else class="userInfo_btn" type="primary" plain open-type="getUserInfo" bindgetuserinfo="handleGetUserInfo">
+      登录
+    </button>
+  </view>
+  <view class="order_row">
+    <view class="order_content">
+      <!-- 历史足迹 -->
+      <view class="order_history">
+        <view class="order_history_item">
+          <view class="order_history_num">0</view>
+          <view class="order_history_name">收藏的店铺</view>
+        </view>
+        <view class="order_history_item">
+          <view class="order_history_num">0</view>
+          <view class="order_history_name">收藏的商品</view>
+        </view>
+        <view class="order_history_item">
+          <view class="order_history_num">0</view>
+          <view class="order_history_name">关注的商品</view>
+        </view>
+        <view class="order_history_item">
+          <view class="order_history_num">0</view>
+          <view class="order_history_name">我的足迹</view>
+        </view>
+      </view>
+      <!-- 我的订单 -->
+      <view class="order_query">
+        <view class="order_query_title">我的订单</view>
+        <view class="order_query_row">
+          <navigator url="/pages/collect/index?type=1" class="order_query_item">
+            <view class="iconfont icon-quanbudingdan"></view>
+            <view class="order_query_name">全部订单</view>
+          </navigator>
+          <navigator class="order_query_item" url="/pages/collect/index?type=2">
+            <view class="iconfont icon-nopayment"></view>
+            <view class="order_query_name">代付款</view>
+          </navigator>
+          <navigator class="order_query_item" url="/pages/collect/index?type=3">
+            <view class="iconfont icon-daishouhuo"></view>
+            <view class="order_query_name">待收货</view>
+          </navigator>
+          <navigator class="order_query_item" url="/pages/collect/index?type=4">
+            <view class="iconfont icon-tuikuan"></view>
+            <view class="order_query_name">退款/退货</view>
+          </navigator>
+        </view>
+      </view>
+      <!-- 收获地址 -->
+      <view class="order_address">
+        收货地址
+      </view>
+      <view class="order_contact">
+        <view class="order_contact_item order_contact_flex">
+          <view class="order_contact_name">联系客服</view>
+          <view class="order_contact_phone">15802694503</view>
+        </view>
+        <view class="order_contact_item">
+          <view class="order_contact_name">意见反馈</view>
+        </view>
+        <view class="order_contact_item">
+          <view class="order_contact_name">关于我们</view>
+        </view>
+      </view>
+      <!-- 推荐给其他人 -->
+      <view class="order_recommend">把应用推荐给其他人</view>
+    </view>
+  </view>
+</view>

@@ -5,9 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo:{}
   },
-
+  /** 
+   * 1 点击获取用户信息
+   * 2 把用户信息放入到data对象中
+  */
+  handleGetUserInfo(e){
+    let {userInfo} = e.detail;
+    this.setData({
+      userInfo
+    })
+    console.log(userInfo)
+  },
   /**
    * 生命周期函数--监听页面加载
    */

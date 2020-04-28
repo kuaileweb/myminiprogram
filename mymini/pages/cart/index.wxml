@@ -9,60 +9,59 @@
     <view class="user_info" wx:else>
       <view class="user">
         <view class="user_name">收货人：{{address.userName}}</view>
-        <view class="user_address">{{address.provinceName+address.cityName+address.countyName+address.detailInfo}}</view>
+        <view class="user_address">
+          {{address.provinceName+address.cityName+address.countyName+address.detailInfo}}
+        </view>
       </view>
       <view class="user_tel">{{address.telNumber}}</view>
     </view>
   </view>
   <view class="cart_content">
     <view class="cart_title">购物车</view>
-    <view class="cart_content_item" wx:for="{{cart}}"
-    wx:key="index"
-    >
-      <view class="cart_checkbox">
-        <checkbox-group 
-        bindchange="handleChangeItem"
-        data-id="{{item.goods_id}}"
-        >
-          <checkbox color="red" checked="{{item.isCheck}}">
-          </checkbox>
-        </checkbox-group>
-      </view>
-      <view class="cart_content_image">
-        <image class="" src="{{item.goods_small_logo}}" mode="widthFix">
-        </image>
-      </view>
-      <view class="cart_content_right">
-        <view class="cart_content_title">{{item.goods_name}}</view>
-        <view class="cart_content_bottom">
-          <view class="cart_content_price">¥{{item.goods_price}}</view>
-          <view class="cart_content_num">
-            <view class="cart_content_btn">-</view>
-            <view class="content_num">{{item.num}}</view>
-            <view class="cart_content_btn">+</view>
+    <block wx:if="{{cart.length}}">
+      <view class="cart_content_item" wx:for="{{cart}}" wx:key="index">
+        <view class="cart_checkbox">
+          <checkbox-group bindchange="handleChangeItem" data-id="{{item.goods_id}}">
+            <checkbox color="red" checked="{{item.isCheck}}"></checkbox>
+          </checkbox-group>
+        </view>
+        <view class="cart_content_image">
+          <image class="" src="{{item.goods_small_logo}}" mode="widthFix"></image>
+        </view>
+        <view class="cart_content_right">
+          <view class="cart_content_title">{{item.goods_name}}</view>
+          <view class="cart_content_bottom">
+            <view class="cart_content_price">¥{{item.goods_price}}</view>
+            <view class="cart_content_num">
+              <view class="cart_content_btn" bindtap="handleNum" data-id="{{item.goods_id}}" data-num="{{-1}}">
+                -
+              </view>
+              <view class="content_num">{{item.num}}</view>
+              <view class="cart_content_btn" bindtap="handleNum" data-id="{{item.goods_id}}" data-num="{1}">
+                +
+              </view>
+            </view>
           </view>
         </view>
       </view>
-    </view>
+    </block>
+    <block wx:else>
+      <image  src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4214290751,1455904856&fm=26&gp=0.jpg" mode="widthFix" ></image>  
+    </block>
   </view>
   <view class="cart_total">
     <view class="total_checkbox">
       <checkbox-group bindchange="changeAllcheck">
-        <checkbox color="red" checked="{{allCheck}}">
-          全选
-        </checkbox>
+        <checkbox color="red" checked="{{allCheck}}">全选</checkbox>
       </checkbox-group>
     </view>
     <view class="cart_total_price">
       <view class="total_price">
-        总价： <text>¥{{totalPrice}}</text>
+        总价：
+        <text>¥{{totalPrice}}</text>
       </view>
-      <view class="cart_total_text">
-        包含运费
-      </view>
+      <view class="cart_total_text">包含运费</view>
     </view>
-    <view class="cart_total_jisuan">
-      计算({{totalNum}})
-    </view>
+    <view class="cart_total_jisuan" bindtap="handlePay">结算({{totalNum}})</view>
   </view>
 </view>

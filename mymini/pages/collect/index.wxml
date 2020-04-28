@@ -1,2 +1,18 @@
-<!--pages/collect/index.wxml-->
-<text>pages/collect/index.wxml</text>
+<Tabs tabs="{{tabs}}" bindpostIndex="getChildren">
+  <view class="orders_wrap">
+    <view class="orders_item" wx:for="{{orders}}" wx:key="index">
+      <view class="orders_item_num">
+        <view class="orders_num_text">订单编号</view>
+        <view class="orders_num_value">{{item.order_number}}</view>
+      </view>
+      <view class="orders_item_price">
+        <view class="orders_price_text">订单价格</view>
+        <view class="orders_price_value">¥{{item.order_price}}</view>
+      </view>
+      <view class="orders_item_time">
+        <view class="orders_time_text">订单日期</view>
+        <view class="orders_time_value">{{item.create_time}}</view>
+      </view>
+    </view>
+  </view>
+  </Tabs>

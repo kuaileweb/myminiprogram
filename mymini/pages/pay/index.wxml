@@ -1,2 +1,46 @@
-<!--pages/pay/index.wxml-->
-<text>pages/pay/index.wxml</text>
+<!-- 购物车容器 -->
+<view class="cart_row">
+  <view class="address">
+    <!-- 当没有获取到用户信息时，就需要显示获取地址按钮 -->
+    <view class="add_address" wx:if="{{!address.userName}}">
+      <button plain type="primary" bindtap="handleChooseAddress">添加收货地址</button>
+    </view>
+    <!-- 有地址时就显示收货地址 -->
+    <view class="user_info" wx:else>
+      <view class="user">
+        <view class="user_name">收货人：{{address.userName}}</view>
+        <view class="user_address">
+          {{address.provinceName+address.cityName+address.countyName+address.detailInfo}}
+        </view>
+      </view>
+      <view class="user_tel">{{address.telNumber}}</view>
+    </view>
+  </view>
+  <view class="cart_content">
+    <view class="cart_title">购物车</view>
+      <view class="cart_content_item" wx:for="{{cart}}" wx:key="index">
+        <view class="cart_content_image">
+          <image class="" src="{{item.goods_small_logo}}" mode="widthFix"></image>
+        </view>
+        <view class="cart_content_right">
+          <view class="cart_content_title">{{item.goods_name}}</view>
+          <view class="cart_content_bottom">
+            <view class="cart_content_price">¥{{item.goods_price}}</view>
+            <view class="cart_content_num">
+              <view class="content_num">X {{item.num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+  </view>
+  <view class="cart_total">
+    <view class="cart_total_price">
+      <view class="total_price">
+        总价：
+        <text>¥{{totalPrice}}</text>
+      </view>
+      <view class="cart_total_text">包含运费</view>
+    </view>
+    <view class="cart_total_jisuan">支付({{totalNum}})</view>
+  </view>
+</view>

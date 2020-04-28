@@ -78,6 +78,27 @@
 					"pathName": "pages/cart/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "支付",
+					"pathName": "pages/pay/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/user/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "查询订单",
+					"pathName": "pages/collect/index",
+					"query": "type=1",
+					"scene": null
 				}
 			]
 		}

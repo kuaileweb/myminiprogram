@@ -24,11 +24,15 @@
   display: flex;
   flex-direction: column;
 }
+.cart_row .cart_content iamge {
+  width: 100%;
+}
 .cart_row .cart_content .cart_title {
   color: var(--themeColor);
   font-size: 32rpx;
   font-weight: 600;
   border-bottom: 3rpx solid var(--themeColor);
+  border-top: 3rpx solid var(--themeColor);
   padding: 10rpx 0;
 }
 .cart_row .cart_content .cart_content_item {

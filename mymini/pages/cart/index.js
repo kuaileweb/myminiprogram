@@ -1,5 +1,5 @@
 // pages/cart/index.js
-import {getScoped,getAddress,openAddress} from '../../utils/async.js';
+import {getScoped,getAddress,openAddress,showModal,showToast} from '../../utils/async.js';
 // import regeneratorRuntime from '../../lib/runtime/runtime';
 Page({
 
@@ -98,6 +98,57 @@ Page({
     this.setCart(cart);
     wx.setStorageSync('cart', cart)
   },
+  /**
+   * 1 点击加减按钮时改变商品的数量
+   * 2 同时在修改data中数据
+   * 3 在把数据放入到存储中
+   */
+  async handleNum(e){
+    // 获取传递过来的值
+    let {id,num} = e.currentTarget.dataset;
+    // 需要获取到cart 数组
+    let {cart} = this.data;
+    // 通过获取到的id再获取本条数据在数组中的索引
+    let index = cart.findIndex(elem=>elem.goods_id===id);
+    // 但是用户点击减号时会出现负数,使用wx.showModel来提醒用户是否要删除该商品
+    if(cart[index].num===1&&num===-1){
+      // 在此处调用封装好的用户确认或取消按钮
+      let res = await showModal("确认删除此商品嘛？")
+      // 使用回返后的参数进行判断
+      if(res.confirm){
+        // 如果用户确认，删除此商品,在更新购物车
+        cart.splice(index,1);
+        this.setCart(cart);
+        wx.setStorageSync('cart', cart)
+      }
+    }else{
+      // 在根据传递过来的num进行计算
+      cart[index].num+=num;
+      this.setCart(cart);
+      wx.setStorageSync('cart', cart)
+    }
+  },
+  /** 
+   * 1 当用户点击结算时需要判断购物车内的商品是否选中
+   * 2 判断用户是否有收获地址
+  */
+ async handlePay(){
+  let {totalNum,address} = this.data;
+  //  判断是否有商品被选中
+  if(totalNum===0){
+    await showToast({title:"您还没有选中商品"})
+    return;
+  }
+  // 在判断是否有收获地址,使用里面任意一个属性来判断
+  if(!address.userName){
+    await showToast({title:"你还没有收货地址"})
+    return;
+  }
+  // 经过验证后可以跳转到支付页面
+  wx.navigateTo({
+    url: '/pages/pay/index',
+  })
+ },
   /**
    * 生命周期函数--监听页面加载
    */
