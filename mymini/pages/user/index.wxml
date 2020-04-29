@@ -19,10 +19,10 @@
           <view class="order_history_num">0</view>
           <view class="order_history_name">收藏的店铺</view>
         </view>
-        <view class="order_history_item">
-          <view class="order_history_num">0</view>
+        <navigator url="/pages/order/index" class="order_history_item">
+          <view class="order_history_num">{{collectNum}}</view>
           <view class="order_history_name">收藏的商品</view>
-        </view>
+        </navigator>
         <view class="order_history_item">
           <view class="order_history_num">0</view>
           <view class="order_history_name">关注的商品</view>

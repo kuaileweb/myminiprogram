@@ -1,2 +1,15 @@
-<!--pages/search/index.wxml-->
-<text>pages/search/index.wxml</text>
+<view class="search_input">
+  <input value="{{value}}" bindinput="handleInput"   placeholder="请输入搜索内容" focus>
+  </input>
+    <button 
+    hidden="{{isWrite}}" class="search_btn" bindtap="handleClearInput">取消</button>
+</view>
+  <navigator 
+wx:for="{{searchList}}"
+wx:key="index"
+class="search_list" url="/pages/goods_details/index?goods_id={{item.goods_id}}">
+{{item.goods_name}}
+</navigator>
+<view class="no_data" wx:if="{{isData}}">
+  找不到相关商品信息
+</view>

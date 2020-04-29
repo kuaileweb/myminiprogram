@@ -19,10 +19,8 @@
   <view class="detail_price">¥{{goodsDetails.goods_price}}</view>
   <view class="goods_row">
     <view class="row_title">{{goodsDetails.goods_name}}</view>
-    <view class="shoucang">
-      <view class="icon">
-        <image class="" src="../../images/icons/shoucang.png" mode="widthFix">
-        </image>
+    <view class="shoucang"  bindtap="handleCollect">
+      <view class="iconfont {{isCollect?'icon-Collection':'icon-shoucang'}}">
       </view>
       <view class="icon_title">收藏</view>
     </view>

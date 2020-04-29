@@ -1,2 +1,28 @@
-<!--pages/order/index.wxml-->
-<text>pages/order/index.wxml</text>
+<Tabs tabs="{{tabs}}" bindpostIndex="getChildren">
+  <view class="collect_title">
+    <view class="collect_title_item active">
+      全部
+    </view>
+    <view class="collect_title_item">
+      正在热卖
+    </view>
+    <view class="collect_title_item">
+      即将上线
+    </view>
+  </view>
+  <view class="collect_content">
+    <view class="collect_content_item"
+    wx:for="{{collectList}}"
+    wx:key="index"
+    >
+      <view class="collect_icon">
+        <image src="{{item.goods_small_logo}}" mode="widthFix" >
+        </image>
+      </view>
+      <view class="collect_content_title">
+        <view class="collect_content_name">{{item.goods_name}}</view>
+        <view class="collect_content_price">¥{{item.goods_price}}</view>
+      </view>
+    </view>
+  </view>
+</Tabs>

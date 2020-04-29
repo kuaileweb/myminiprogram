@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userInfo:{}
+    userInfo:{},
+    collectNum:0
   },
   /** 
    * 1 点击获取用户信息
@@ -36,7 +37,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let collect = wx.getStorageSync('collect')||[];
+    this.setData({
+      collectNum:collect.length
+    })
   },
 
   /**

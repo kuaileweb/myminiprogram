@@ -74,6 +74,7 @@ Page({
     console.log(orders)
     this.setData({orders})
   },
+  
   /**
    * 1 获取页面中跳转时携带的参数
    * 2 小程序中分为页面栈 也是一个数组

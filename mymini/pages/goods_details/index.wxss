@@ -36,13 +36,6 @@
   text-align: center;
   border-left: 1px solid #000;
 }
-.goods_detail .goods_row .shoucang .icon {
-  width: 30rpx;
-  margin-left: 40%;
-}
-.goods_detail .goods_row .shoucang .icon image {
-  width: 100%;
-}
 .goods_detail .goods_info .info_title {
   color: var(--themeColor);
   font-weight: 500;

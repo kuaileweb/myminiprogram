@@ -50,8 +50,9 @@ let showModal = (content)=>{
 let showToast = ({title})=>{
   return new Promise((resolve,reject)=>{
     wx.showToast({
-      title:title,
-      icon:"none"
+      title,
+      icon:"none",
+      mask:true
     })
   })
 }

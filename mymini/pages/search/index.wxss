@@ -1,1 +1,39 @@
-/* pages/search/index.wxss */
+page {
+  background-color: #e8e8e8;
+}
+.search_input {
+  display: flex;
+  margin-top: 30rpx;
+  padding: 0 10rpx;
+}
+.search_input input {
+  flex: 5;
+  height: 90rpx;
+  border: 1rpx solid #ddd;
+  background-color: #fff;
+}
+.search_input .search_btn {
+  background-color: #fff;
+  flex: 2;
+  border: 1rpx solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110rpx;
+  height: 90rpx;
+  margin-left: 10rpx;
+}
+.search_list {
+  background-color: #ddd;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border: 1rpx solid #fff;
+  margin-top: 15rpx;
+  padding: 10rpx 30rpx;
+  font-size: 34rpx;
+}
+.no_data {
+  font-size: 50rpx;
+  color: var(--themeColor);
+}
